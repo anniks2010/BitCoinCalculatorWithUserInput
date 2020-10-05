@@ -8,6 +8,7 @@ const app=express();
 app.set('view engine',ejs);
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.static('public'));
+app.use('/style', express.static(__dirname+'public/style'));
 
 app.get("/", function(req, res){
     res.render('index.ejs', { currency : "" , number: "", code: ""});
@@ -51,7 +52,7 @@ app.get("/", function(req, res){
     console.log('Server is running on Port 3000');
     });*/
 
-    app.listen(process.env.PORT || 3000, function(){
+   app.listen(process.env.PORT || 3000, function(){
         console.log("Server has started.");
     });
     

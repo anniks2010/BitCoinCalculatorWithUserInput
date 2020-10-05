@@ -3,25 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/main.css">
     <title>Calculator</title>
 </head>
 <body>
     <h1>BitCoin Calculator</h1>
     <form action="/" method="POST">
-        Insert number of BitCoins:
+        <label for="number">Insert number of BitCoins:</label><br>
         <input type="text" name="number" id="number"><br><br>
-        Bitcoin to:
-        <select name="currency">
+        <label for="currency">Bitcoin to:</label><br>
+        <select name="currency" id="currency">
             <option value="USD">US Dollar</option>
             <option value="EUR">EU Euros</option>
         </select>
         <button type="submit" id="button">Convert</button>
     </form><br>
+    <% if (currency){%>
     <table>
         <tr>
     <th>Total value of BitCoins:</th>
     <td><%=currency +' '+code%></td>
 </tr>
 </table>
+<%}%>
 </body>
 </html>
